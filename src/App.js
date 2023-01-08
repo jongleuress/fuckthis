@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Weather from './weather';
+import WeatherAjax from './searchajax';
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <p>test</p>
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -17,6 +20,8 @@ function App() {
         >
           Learn React
         </a>
+        <Weather />
+        <WeatherAjax city='Arrecife'/>
       </header>
     </div>
   );
