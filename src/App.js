@@ -34,7 +34,7 @@ export default function App() {
         <input type="submit" value="Search"></input>
       </form>
 
-      <p><a href="">GitHub link</a></p>
+      <p><a href="https://github.com/jongleuress/yesthis">GitHub link</a></p>
 
       <ColorRing
         visible={true}
