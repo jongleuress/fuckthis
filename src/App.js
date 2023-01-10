@@ -34,6 +34,8 @@ export default function App() {
         <input type="submit" value="Search"></input>
       </form>
 
+      <p><a href="">GitHub link</a></p>
+
       <ColorRing
         visible={true}
         height="80"
