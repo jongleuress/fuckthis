@@ -2,6 +2,7 @@ import "./styles.css";
 import { useState } from "react";
 import Weather from "./weather";
 import { ColorRing } from "react-loader-spinner";
+import Display from "./display";
 
 export default function App() {
   let [city, setCity] = useState(``);
@@ -35,26 +36,10 @@ export default function App() {
         <input type="submit" value="Search"></input>
       </form>
 
-    <div class="container-md">
-
-      <nav class="navbar navbar-light">
-        <span class="navbar-brand mb-0 h1" id="logo">My weather app</span>
-        <span class="navbar-brand mb-0 h1" id="bar-icon"><i class="fa-solid fa-bars"></i></span>
-      </nav>
-
-
-      <div class="row header">
-        <div class="col-md-6 first-col">
-          <form action="" id="city-form">
-            <input type="text" autocomplete="off" id="search" placeholder="Search your city" />
-            <input type="submit" class="btn top-button btn-outline-primary" />
-          </form>
-        </div>
-      </div>
-
-    </div>
-
       <p><a href="https://github.com/jongleuress/yesthis">GitHub link</a></p>
+
+      <Display/>
+
 
       <ColorRing
         visible={true}
