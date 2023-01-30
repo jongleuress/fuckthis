@@ -28,11 +28,31 @@ export default function App() {
 
   return (
     <div className="App">
+      <div className="container">
       <h1>Weather search app</h1>
       <form onSubmit={handleSubmit}>
         <input type="search" onChange={updateOnKey}></input>
         <input type="submit" value="Search"></input>
       </form>
+
+    <div class="container-md">
+
+      <nav class="navbar navbar-light">
+        <span class="navbar-brand mb-0 h1" id="logo">My weather app</span>
+        <span class="navbar-brand mb-0 h1" id="bar-icon"><i class="fa-solid fa-bars"></i></span>
+      </nav>
+
+
+      <div class="row header">
+        <div class="col-md-6 first-col">
+          <form action="" id="city-form">
+            <input type="text" autocomplete="off" id="search" placeholder="Search your city" />
+            <input type="submit" class="btn top-button btn-outline-primary" />
+          </form>
+        </div>
+      </div>
+
+    </div>
 
       <p><a href="https://github.com/jongleuress/yesthis">GitHub link</a></p>
 
@@ -47,6 +67,7 @@ export default function App() {
       />
       {/* <SearchEng /> */}
       <Query />
+    </div>
     </div>
   );
 }
