@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Timestamp from "./date";
 import axios from "axios";
+import ShowTemp from "./temp";
 
 export default function Weather(props) {
 
@@ -36,8 +37,7 @@ export default function Weather(props) {
                         <span>{props.city}</span> | <Timestamp date={date} />
                     </h1>
 
-                    <h2><span>{props.tempr}°C</span></h2>
-                    <button type="button" class="btn temp-button" id="buttonTemp">°C</button>|<button type="button" class="btn temp-button" id="buttonTemp-frh">F</button>
+                    <ShowTemp tempr={tempr}/>
                     
                 </div>
 
