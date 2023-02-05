@@ -1,7 +1,6 @@
 import "./styles.css";
 import { useState } from "react";
 import Weather from "./weather";
-import { ColorRing } from "react-loader-spinner";
 import Display from "./display";
 
 export default function App() {
@@ -29,31 +28,33 @@ export default function App() {
 
   return (
     <div className="App">
-      <div className="container">
-      <h1>Weather search app</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="search" onChange={updateOnKey}></input>
-        <input type="submit" value="Search"></input>
-      </form>
+      <div class="container-md">
+            <nav class="navbar navbar-light">
+                <span class="navbar-brand mb-0 h1" id="logo">My weather app</span>
+                <span class="navbar-brand mb-0 h1" id="bar-icon"><i class="fa-solid fa-bars"></i></span>
+            </nav>
+            
+            <div class="row header">
+                <div class="col-md-6 first-col">
+                    <form onSubmit={handleSubmit}>
+                        <input type="search" onChange={updateOnKey}></input>
+                        <input type="submit" value="Search"></input>
+                    </form>
+                </div>
+                <div class="col-md-6"></div>
 
-      <p><a href="https://github.com/jongleuress/yesthis">GitHub link</a></p>
-
-      <Display/>
+            </div>
 
 
-      <ColorRing
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="blocks-loading"
-        wrapperStyle={{}}
-        wrapperClass="blocks-wrapper"
-        colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
-      />
-      {/* <SearchEng /> */}
+            
+            
+            <Display city="Gotham"/>
+            
+            
+
       <Query />
     </div>
-    </div>
+  </div>
   );
 }
 
