@@ -11,6 +11,7 @@ export default function Weather(props) {
   let [date, setDate] = useState(` `);
   let [hum, setHum] = useState(` `);
   let [wind, setWind] = useState(` `);
+  let [icon, setIcon] = useState(` `);
 
   function showTemp(response) {
     setTempr(Math.round(response.data.main.temp));
@@ -19,6 +20,7 @@ export default function Weather(props) {
     setDate(new Date(response.data.dt * 1000));
     setWind(response.data.wind.speed.toString());
     setHum(response.data.main.humidity);
+    setIcon(response.data.weather[0].icon);
   }
 
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=28bcae7e59c97a4369d75ef9aa62aa6e&units=metric`;
@@ -37,7 +39,7 @@ export default function Weather(props) {
                         <span>{props.city}</span> | <Timestamp date={date} />
                     </h1>
 
-                    <ShowTemp tempr={tempr}/>
+                    <ShowTemp celsius={tempr}/>
                     
                 </div>
 
@@ -51,7 +53,9 @@ export default function Weather(props) {
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <img class="img-fluid" id="main-icon" src="" alt=""/>
+                                <img class="img-fluid" id="main-icon" src={`https://thumbs.dreamstime.com/z/sunny-weather-icon-sun-icon-vector-illustration-flat-sunny-weather-icon-sun-icon-vector-illustration-flat-design-132471323.jpg`} alt=""/>
+
+                                (/* <img class="img-fluid" id="main-icon" src={`/public/media/${icon}.png`} alt=""/> */)
                             </p>
                         </div>
                     </div>

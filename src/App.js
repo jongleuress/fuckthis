@@ -18,11 +18,14 @@ export default function App() {
     event.preventDefault();
   }
 
+  // so Query runs and if there's a match for the city we searched it employs useState from Weather and displays real-life info - if not (the else bit) it displays fake info for Gotham from the Display component 
+
   function Query() {
     if (city) {
       return <Weather city={city} />;
     } else {
       return null;
+      // return <Display city="Gotham"/>
     }
   }
 
@@ -48,6 +51,7 @@ export default function App() {
 
             
             
+            (/*  need to quote this bit below out */) 
             <Display city="Gotham"/>
             
             
@@ -58,5 +62,5 @@ export default function App() {
   );
 }
 
-// write a condition that only if city !== null, Weather is triggered
+
 
