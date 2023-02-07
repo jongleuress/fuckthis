@@ -12,6 +12,7 @@ export default function Weather(props) {
   let [hum, setHum] = useState(` `);
   let [wind, setWind] = useState(` `);
   let [icon, setIcon] = useState(` `);
+  let [detail, setDet] = useState(` `);
 
   function showTemp(response) {
     setTempr(Math.round(response.data.main.temp));
@@ -21,6 +22,19 @@ export default function Weather(props) {
     setWind(response.data.wind.speed.toString());
     setHum(response.data.main.humidity);
     setIcon(response.data.weather[0].icon);
+    setDet(response.data.weather[0].description);
+
+    // if (date.getHours() <= 8 || thisDate.getHours() >= 21) {
+    //   document.querySelector(".container-md").style.background = "#004962";
+    //   document.querySelector(".container-md").style.color = "#ecd287";
+    //   document.querySelector("#logo").style.color = "#fff9e9";
+    //   document.querySelector("#bar-icon").style.color = "#fff9e9";
+    // } else {
+    //   document.querySelector(".container-md").style.background = "linear-gradient(0deg, rgba(21,144,145,1) 0%, rgba(55,170,191,1) 100%)";
+    //   document.querySelector(".container-md").style.color = "#112B3C";
+    //   document.querySelector("#logo").style.color = "#000000";
+    //   document.querySelector("#bar-icon").style.color = "#000000";
+    // }
   }
 
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=28bcae7e59c97a4369d75ef9aa62aa6e&units=metric`;
@@ -28,7 +42,6 @@ export default function Weather(props) {
   axios.get(url).then(showTemp);
 
   if (props.city === name) {
-    console.log(name);
     return (
 
   <div className="Success">
@@ -47,15 +60,13 @@ export default function Weather(props) {
                     <div class="row">
                         <div class="col-md-6">
                             <h2>{descr}</h2>
-                            <h3>0</h3>
-                            <h4>{wind}</h4>
-                            <h4>{hum}</h4>
+                            <h3>{detail}</h3>
+                            <h4>{wind}m/sec</h4>
+                            <h4>{hum}%</h4>
                         </div>
                         <div class="col-md-6">
                             <p>
-                                <img class="img-fluid" id="main-icon" src={`https://thumbs.dreamstime.com/z/sunny-weather-icon-sun-icon-vector-illustration-flat-sunny-weather-icon-sun-icon-vector-illustration-flat-design-132471323.jpg`} alt=""/>
-
-                                (/* <img class="img-fluid" id="main-icon" src={`/public/media/${icon}.png`} alt=""/> */)
+                                <img class="img-fluid" id="main-icon" src={`${process.env.PUBLIC_URL}/media/${icon}.png`} alt=""/>
                             </p>
                         </div>
                     </div>

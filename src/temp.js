@@ -36,17 +36,3 @@ export default function ShowTemp(props) {
     
 }
 
-// let tempNumber = currentTemp.textContent;
-// let temp = Number(tempNumber);
-// let fToCel = ((temp - 32) * 5) / 9;
-// fToCel = Math.round(fToCel);
-
-
-// if (forcastTempConvert.textContent.includes("F")) {
-//     let tempDigit = forcastTempConvert.textContent;
-//     let temp = tempDigit.replace("F", "");
-//     let fToCelFor = ((temp - 32) * 5) / 9;
-//     fToCelFor = Math.round(fToCelFor);
-//     let convertCel = fToCelFor.toString()
-//     forcastTempConvert.innerHTML = `${convertCel}°C`;
-// }

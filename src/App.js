@@ -24,8 +24,7 @@ export default function App() {
     if (city) {
       return <Weather city={city} />;
     } else {
-      return null;
-      // return <Display city="Gotham"/>
+      return <Display city="Gotham"/>;
     }
   }
 
@@ -48,13 +47,7 @@ export default function App() {
 
             </div>
 
-
-            
-            
-            (/*  need to quote this bit below out */) 
-            <Display city="Gotham"/>
-            
-            
+           
 
       <Query />
     </div>

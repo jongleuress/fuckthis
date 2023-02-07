@@ -13,5 +13,17 @@ export default function Timestamp(props) {
      ];
 
     let day = weekDays[props.date.getDay()];
-    return <span>{day}</span>;
+    let hour = props.date.getHours();
+    let min = props.date.getMinutes();
+
+    if (min < 10) {
+        min = `0${min}`
+       }
+       if (hour < 10) {
+        hour = `0${hour}`
+       }
+  
+    let actualDate = `${day} ${hour}:${min}`;
+
+    return <span>{actualDate}</span>;
 }
