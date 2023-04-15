@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Timestamp from "./date";
 import axios from "axios";
 import ShowTemp from "./temp";
+import Forecast from "./forecast";
 
 export default function Weather(props) {
 
@@ -72,6 +73,8 @@ export default function Weather(props) {
                     </div>
                 </div>
             </div>
+
+            <Forecast />
 
       <div>
         <p>
